@@ -57,7 +57,6 @@ app.delete('/api/contacts/:id', async (req, res) => {
     res.status(500).json({ message: 'Server Error: Could not delete contact' });
   }
 });
-
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
