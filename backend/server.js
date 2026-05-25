@@ -4,7 +4,6 @@ const cors = require('cors');
 const Contact = require('./Contact');
 
 const app = express();
-
 mongoose.connect('mongodb://127.0.0.1:27017/contactDB')
   .then(() => console.log('MongoDB Database connected successfully!'))
   .catch(err => console.error('Database connection error:', err));
@@ -20,7 +19,6 @@ app.post('/api/contacts', async (req, res) => {
   try {
     const { name, email, phone } = req.body;
     
-    // Basic validation
     if (!name || !email || !phone) {
       return res.status(400).json({ message: 'All fields are required' });
     }
